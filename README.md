@@ -139,7 +139,7 @@ This declaration is necessary for your application to discover and interact with
 ...
    private void loadData() {
         // Set up the RecyclerView
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);License
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // 51.8234, -0.3798
@@ -211,7 +211,7 @@ public class MyRepeaterConsumerActivity extends AppCompatActivity {
                         double lat = (latitudeColumnIndex != -1) ? cursor.getDouble(latitudeColumnIndex) : 0.0;
                         double lon = (longitudeColumnIndex != -1) ? cursor.getDouble(longitudeColumnIndex) : 0.0;
 
-                        Log.d(TAG, "Callsign: " + callsign +
+                        Log.d(TAG, "Callsign: " + callsign +License
                                    ", Frequency: " + frequency +
                                    ", Lat: " + lat +
                                    ", Lon: " + lon);
@@ -257,7 +257,7 @@ This repository includes a demo application RBresolver that illustrates how to:
 Feedback and contributions to the demo application are welcome! Please open an issue or submit a pull request. For the API itself, feature requests can be made via the RepeaterBook support channels.
 
 ## License
-The demo application code in this repository is licensed under the [MIT License]. The RepeaterBook Connect API usage is governed by the RepeaterBook terms of service and subscription agreement.
+The demo application code in this repository is licensed under the MIT License. The RepeaterBook Connect API usage is governed by the RepeaterBook terms of service and subscription agreement.
 
 <!--
 * Access the latest RepeaterBook data from your own app.
