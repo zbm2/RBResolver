@@ -1,6 +1,6 @@
 # RepeaterBook Connect API
 
-**Empower your Android applications with amateur radio repeater data, sourced directly from the user's RepeaterBook installation using this efficient Content Provider service.**
+**Empower your Android applications with the best amateur radio repeater data, sourced directly from the user's RepeaterBook installation using this efficient Content Provider service.**
 
 RepeaterBook Connect allows third-party Android apps to seamlessly integrate and display repeater information. This provides a powerful way to leverage the comprehensive RepeaterBook dataset without needing to manage data synchronization, network calls, or complex UI elements for repeater selection.
 
@@ -62,7 +62,7 @@ The RepeaterBook Connect API is implemented as an Android `ContentProvider`. You
     *   `Updated` (String): Date/timestamp of the last update.
     *   `By` (String): Identifier of who last updated the information.
     *   `RBID` (String): RepeaterBook specific identifier.
-    *   `OpStatus` (int): Operational status code.
+    *   `OpStatus` (int): Operational status code.    Based on the `RepeaterBook Connect` provider, expect the following columns:
     *   `DMR_Text` (String): DMR related text information (e.g., Talkgroup info).
     *   `NAC` (String): NAC code (for P25 systems).
     *   `NotesLinks` (String): Notes containing links or link-related information.
