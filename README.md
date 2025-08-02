@@ -78,11 +78,10 @@ The RepeaterBook Connect API is implemented as an Android `ContentProvider`. You
     *   `BandSort` (int): A sortable representation of the band.
     *   `DMRID` (String): DMR ID.
     *   `DMRNetwork` (String): DMR Network affiliation.
-    *   `M17CAN` (int): M17 Community Access Number or related flag.
+    *   `M17CAN` (int): M17 Community Access Number.
 
-    *(Note: For columns like `IRLP_node`, `ECHOLINK_node`, etc., marked as "String/dynamic", the exact data type retrieved from the cursor might vary if they can sometimes be numbers or strings. Always query and handle data types robustly. Check your `Repeater.fromContentValues` implementation for definitive types from `ContentValues`.)*
+    *(Note: For columns like `IRLP_node`, `ECHOLINK_node`, etc., marked as "String/dynamic", the exact data type retrieved from the cursor might vary if they can sometimes be numbers or strings. Always query and handle data types robustly. Check `Repeater.fromContentValues` implementation for definitive types from `ContentValues`.)*
 
-    *   *(You can find a more comprehensive list by inspecting the cursor in the demo app or future documentation).*
 *   **Query Parameters:**
     *   `projection` (String[]): Specify which columns you need. `null` for all available columns.
     *   `selection` (String): Typically `null`. The selection logic (filtering, sorting, location proximity) is primarily handled by the settings within the RepeaterBook app itself.
