@@ -2,7 +2,7 @@
 
 **Empower your Android applications with the best amateur radio repeater data, sourced directly from the user's RepeaterBook installation using this efficient Content Provider service.**
 
-RepeaterBook Connect allows third-party Android apps to seamlessly integrate and display repeater information. This provides a powerful way to leverage the comprehensive RepeaterBook dataset without needing to manage data synchronization, network calls, or complex UI elements for repeater selection.
+RepeaterBook Connect API allows third-party Android apps to seamlessly integrate and display repeater information. This provides a powerful way to leverage the comprehensive RepeaterBook dataset without needing to manage data synchronization, network calls, or complex UI elements for repeater selection.
 
 ## Key Advantages for Developers
 
