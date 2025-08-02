@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/rangeTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="start|center_vertical"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_medium"
+        tools:text="2.2 Miles North East  FM Fusion" />
+
+    <LinearLayout
+        android:id="@+id/callMeasure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/negative_very_small_padding"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/callTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jost"
+            android:textColor="@color/android_green"
+            android:textSize="@dimen/text_large"
+            android:textStyle="bold"
+            tools:text="GB7VR" />
+
+        <TextView
+            android:id="@+id/slashTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/jost"
+            android:text="@string/slash_space_delimiter"
+            android:textColor="@color/android_green"
+            android:textSize="@dimen/text_large"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/locationTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="@font/jost"
+            android:maxLines="1"
+            android:textColor="@color/android_green"
+            android:textSize="@dimen/text_large"
+            android:textStyle="bold"
+            tools:text="Harpenden" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/outTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/negative_very_small_padding"
+        android:layout_marginBottom="@dimen/small_padding"
+        android:ellipsize="end"
+        android:fontFamily="@font/jost"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_medium"
+        tools:text="145.61250  -0.6 MHz  77Hz" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_height"
+        android:background="@color/grey" />
+
+</LinearLayout>

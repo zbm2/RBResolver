@@ -1,0 +1,96 @@
+
+  Manifest.xml -
+    <queries>
+          <package android:name="com.zbm2.repeaterbook"/>
+    </queries>
+
+  Activity -
+  Uri CONTENT_URI = Uri.parse("content://com.zbm2.repeaterbook.RBContentProvider/repeaters");
+  ..
+  // Create a selection argument array
+      String[] selectionArgs = {String.valueOf(latitude), String.valueOf(longitude)};
+  ..
+  // Get the Cursor from the Content Provider
+      RBcursor = getContentResolver().query(CONTENT_URI, null, null, selectionArgs, null);
+
+
+ The app to app API feature is part of RepeaterBook Connect, a $12 a year subscription. RepeaterBook Connect already allows you to control a wide range
+ of ICOM and Yaesu radios over USB and Bluetooth directly from the app, no more struggling setting up your radio to use repeaters.
+
+
+  // Use an enum for column names to improve type safety and readability
+    // int idColumnIndex = cursor.getColumnIndex(RBColumn.id.name());
+    private enum Column {
+      id("id"),
+        Call("Call"),
+        Band("Band"),
+        RX("RX"),
+        TX("TX"),
+        Offset("Offset"),
+        Services("Services"),
+        Access("Access"),
+        CTCSS("CTCSS"),
+        DCS("DCS"),
+        IRLP_node("IRLP_node"),
+        ECHOLINK_node("ECHOLINK_node"),
+        DStar_node("DStar_node"),
+        AllStar_node("AllStar_node"),
+        WIRES_node("WIRES_node"),
+        EmergencyNet("EmergencyNet"),
+        Location("Location"),
+        County("County"),
+        State("State"),
+        Province("Province"),
+        Lat("Lat"),
+        Lng("Lng"),
+        Country("Country"),
+        URL("URL"),
+        NotesFeatures("NotesFeatures"),
+        NotesAccess("NotesAccess"),
+        Updated("Updated"),
+        By("By"),
+        RBID("RBID"),
+        OpStatus("OpStatus"),
+        DMR_Text("DMR_Text"),
+        NAC("NAC"),
+        NotesLinks("NotesLinks"),
+        DTMF("DTMF"),
+        Region("Region"),
+        ASL("ASL"),
+        Power("Power"),
+        Distance("Distance"),
+        CompassHeading("CompassHeading"),
+        Bearing("Bearing"),
+        BearingSort("BearingSort"),
+        ServiceTxt("ServiceTxt"),
+        BandSort("BandSort"),
+        DMRID("DMRID"),
+        DMRNetwork("DMRNetwork"),
+        M17CAN("M17CAN");
+
+        private final String name;
+
+        Column(String name) {
+            this.name = name;
+        }
+
+        public String getName() {
+            return name;
+        }
+    }
+
+        int callColumnIndex = cursor.getColumnIndex(Column.Call.name());
+                int freqColumnIndex = cursor.getColumnIndex(Column.RX.name());
+
+                public double input;
+                public double offset;
+                public String tone;
+                public String location;
+                public String state;
+                public String county;
+                public String call;
+                public String use;
+                public double miles;
+                public String bearing;
+                public double degrees;
+
