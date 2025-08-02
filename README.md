@@ -14,7 +14,8 @@ RepeaterBook Connect allows third-party Android apps to seamlessly integrate and
 *   **Standard Android Patterns:** Easy to integrate using familiar `ContentResolver` and `Cursor` objects.
 *   **Reduced App Complexity:** Offload the burden of data selection, sorting, fetching, parsing, and storage to RepeaterBook.
 
-## :warning: Important: Subscription & Installation Prerequisites
+## Subscription & Installation Prerequisites
+<!-- ## :warning: Important: Subscription & Installation Prerequisites -->
 
 For your application to successfully retrieve data via the RepeaterBook Connect API:
 
@@ -31,25 +32,56 @@ Your application should:
 The RepeaterBook Connect API is implemented as an Android `ContentProvider`. Your application will use a `ContentResolver` to query this provider.
 
 *   **Content URI:** `content://com.zbm2.repeaterbook.RBContentProvider/repeaters`
-*   **Data Columns:** The returned `Cursor` will contain columns representing repeater attributes. Key columns include:
-    *   `_id` (long): Unique row ID.
-    *   `callsign` (String): Repeater callsign.
-    *   `frequency` (String): Downlink frequency.
-    *   `uplink_freq` (String): Uplink frequency.
-    *   `tone` (String): Uplink CTCSS tone or DCS code.
-    *   `downlink_tone` (String): Downlink CTCSS tone or DCS code.
-    *   `mode` (String): e.g., FM, D-STAR, DMR, C4FM.
-    *   `trust` (int): Data source/trust level.
-    *   `status` (String): e.g., On-Air, Off-Air.
-    *   `country_code` (String): e.g., US, GB.
-    *   `state_code` (String): e.g., CA, NY.
-    *   `county_code` (String): e.g., Los Angeles.
-    *   `city` (String): Nearest city.
-    *   `landmark` (String): Landmark.
-    *   `latitude` (double): Latitude in decimal degrees.
-    *   `longitude` (double): Longitude in decimal degrees.
-    *   `notes` (String): Additional notes.
-    *   `distance` (double): Calculated distance if location provided in query.
+*   **Data Columns:** The returned `Cursor` will contain columns representing repeater attributes.
+    *   `id` (int): Unique identifier for the repeater entry.
+    *   `Call` (String): Callsign of the repeater.
+    *   `Band` (String): Operating band (e.g., "2m", "70cm").
+    *   `RX` (double): Receive frequency in MHz.
+    *   `TX` (double): Transmit frequency in MHz.
+    *   `Offset` (String): Transmit offset (e.g., "-0.600", "+5.000", "Simplex").
+    *   `Services` (int): Identifier for services offered.
+    *   `Access` (int): Identifier for access requirements.
+    *   `CTCSS` (double): CTCSS tone in Hz (e.g., 100.0).
+    *   `DCS` (int): DCS code.
+    *   `IRLP_node` (String/dynamic): IRLP node identifier.
+    *   `ECHOLINK_node` (String/dynamic): Echolink node identifier.
+    *   `DStar_node` (String/dynamic): D-STAR node identifier.
+    *   `AllStar_node` (String/dynamic): AllStar node identifier.
+    *   `WIRES_node` (String/dynamic): Yaesu WIRES-X node identifier.
+    *   `EmergencyNet` (int): Flag or identifier for emergency net status.
+    *   `Location` (String): General location description (e.g., city name, landmark).
+    *   `County` (String): County where the repeater is located.
+    *   `State` (String): State or equivalent administrative region.
+    *   `Province` (String): Province (often used in Canada and other countries).
+    *   `Lat` (double): Latitude in decimal degrees.
+    *   `Lng` (double): Longitude in decimal degrees.
+    *   `Country` (String): Country where the repeater is located.
+    *   `URL` (String): Web URL related to the repeater or club.
+    *   `NotesFeatures` (String): Notes regarding features of the repeater.
+    *   `NotesAccess` (String): Notes regarding access to the repeater.
+    *   `Updated` (String): Date/timestamp of the last update.
+    *   `By` (String): Identifier of who last updated the information.
+    *   `RBID` (String): RepeaterBook specific identifier.
+    *   `OpStatus` (int): Operational status code.
+    *   `DMR_Text` (String): DMR related text information (e.g., Talkgroup info).
+    *   `NAC` (String): NAC code (for P25 systems).
+    *   `NotesLinks` (String): Notes containing links or link-related information.
+    *   `DTMF` (String): DTMF access codes or related information.
+    *   `Region` (String): Broader region identifier.
+    *   `ASL` (String): Altitude Above Sea Level.
+    *   `Power` (String): Transmitter power output (e.g., "50W").
+    *   `Distance` (double): Calculated distance to the repeater (if location was provided in the query).
+    *   `CompassHeading` (String): Compass heading towards the repeater (e.g., "NW").
+    *   `Bearing` (double): Bearing in degrees towards the repeater.
+    *   `BearingSort` (String): A sortable representation of the bearing.
+    *   `ServiceTxt` (String): Textual description of services (e.g., "DSTAR", "FM").
+    *   `BandSort` (int): A sortable representation of the band.
+    *   `DMRID` (String): DMR ID.
+    *   `DMRNetwork` (String): DMR Network affiliation.
+    *   `M17CAN` (int): M17 Community Access Number or related flag.
+
+    *(Note: For columns like `IRLP_node`, `ECHOLINK_node`, etc., marked as "String/dynamic", the exact data type retrieved from the cursor might vary if they can sometimes be numbers or strings. Always query and handle data types robustly. Check your `Repeater.fromContentValues` implementation for definitive types from `ContentValues`.)*
+
     *   *(You can find a more comprehensive list by inspecting the cursor in the demo app or future documentation).*
 *   **Query Parameters:**
     *   `projection` (String[]): Specify which columns you need. `null` for all available columns.
@@ -126,7 +158,6 @@ This declaration is necessary for your application to discover and interact with
     }
 ...
 ```
-
 <!--
 import android.database.Cursor;
 import android.net.Uri;
@@ -210,7 +241,6 @@ public class MyRepeaterConsumerActivity extends AppCompatActivity {
         }
     }
 }
-```
 -->
 
 ## Demo Application
