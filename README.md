@@ -115,7 +115,7 @@ To integrate the RepeaterBook Connect API into your Android application, follow 
     </queries>
 
     <application
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher"    Based on the `RepeaterBook Connect` provider, expect the following columns:
         android:label="@string/app_name"
         ...>
         
