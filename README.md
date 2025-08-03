@@ -80,7 +80,7 @@ The RepeaterBook Connect API is implemented as an Android `ContentProvider`. You
     *   `DMRNetwork` (String): DMR Network affiliation.
     *   `M17CAN` (int): M17 Community Access Number.
 
-    *(Note: For columns like `IRLP_node`, `ECHOLINK_node`, etc., marked as "String/dynamic", the exact data type retrieved from the cursor might vary if they can sometimes be numbers or strings. Always query and handle data types robustly. Check `Repeater.fromContentValues` implementation for definitive types from `ContentValues`.)*
+    *Note: For columns like `IRLP_node`, `ECHOLINK_node`, etc., marked as "String/dynamic", the exact data type retrieved from the cursor might vary if they can sometimes be numbers or strings. Always query and handle data types robustly. Check `Repeater.fromContentValues` implementation for definitive types from `ContentValues`*
 
 *   **Query Parameters:**
     *   `projection` (String[]): Specify which columns you need. `null` for all available columns.
